@@ -15,7 +15,7 @@ tCelsius.onchange = function () {
 	const fahrenheit = (value * 9) / 5 + 32;
 
 	document.getElementById("resultat").textContent = `${fahrenheit.toFixed(2)} °F`;
-
+	tFahreneit.textContent = fahrenheit;
 	console.log(tFahreneit);
 };
 
