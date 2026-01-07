@@ -1,3 +1,4 @@
+/*General body section*/
 *{
     padding: 0;
     margin: 0;
@@ -5,6 +6,7 @@
 body{
     background-color: whitesmoke;
 }
+/*Flex box section*/
 .container{
    display: flex;
    flex-direction: column;
