@@ -1,6 +1,6 @@
 //Recuperation nos rentrer de donnees
 let tCelsius = document.getElementById("celsiusT");
-let tFahreneit = document.getElementById("fahreneitT");
+let tFahrenheit = document.getElementById("fahrenheitT");
 let tKalvin = document.getElementById("kalvinT");
 
 //convertissons les valeurs  des temperature respective
@@ -8,14 +8,14 @@ let tKalvin = document.getElementById("kalvinT");
 tCelsius.onchange = function () {
 	const value = tCelsius.value;
 	if (value === "") {
-		tFahreneit.textContent = "";
+		tFahrenheit.textContent = "";
 		tKalvin.textContent = "";
 		return;
 	}
 
 	//Calcul F
 	const fahrenheit = (value * 9) / 5 + 32;
-	tFahreneit.value = `${fahrenheit.toFixed(2)} °F`;
+	tFahrenheit.value = `${fahrenheit.toFixed(2)} °F`;
 
 	//Calcul K
 	const kalvin = value + 273.15;
@@ -23,8 +23,8 @@ tCelsius.onchange = function () {
 };
 
 //Fahreneit en C et en Kalvin
-tFahreneit.onchange = function () {
-	const valueC = tFahreneit.value;
+tFahrenheit.onchange = function () {
+	const valueC = tFahrenheit.value;
 	if (valueC === "") {
 		tCelsius.textContent = "";
 		return;
