@@ -58,9 +58,28 @@ tKalvin.onchange = function () {
 	tFahrenheit.value = `${f.toFixed(2)}`;
 };
 
+/*
 //Let use swich statement to track which input we're working on
-/*switch (temperature) {
-	case 0:
+let temperature;
+switch (temperature) {
+	case tCelsius:
+		tCelsius.onchange = function () {
+			const value = tCelsius.value;
+			if (value === "") {
+				tFahrenheit.textContent = "";
+				tKalvin.textContent = "";
+				return;
+			}
+
+			//Calcul F
+			temperature = (value * 9) / 5 + 32;
+			tFahrenheit.value = `${temperature.toFixed(2)}`;
+
+			//Calcul K
+			temperature = value + 273.15;
+			tKalvin.value = `${temperature}`;
+		};
+
 		break;
 	case 1:
 		break;
