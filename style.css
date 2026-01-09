@@ -1,10 +1,11 @@
 /*General body section*/
-*{
-    padding: 0;
-    margin: 0;
-}
 body{
-    background-color: whitesmoke;
+  margin: 0;
+  background: linear-gradient(to left bottom, rgb(104, 174, 158), rgb(90, 210, 142));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /*Flex box section*/
 .container{
@@ -15,24 +16,44 @@ body{
    height: 500px;
    justify-content: center;
    align-items: center;
-   gap: 20px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0.15);
-   margin-top: 150px;
-   margin-left: 500px;
-   margin-right: 500px;
-   background-color: aquamarine;
+   padding: 20px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0.3);
    border-radius: 30px;
    color: green;
+   background: rgba(53, 151, 61, 0.3);
+}
+/*input*/
+input{
+  width: 220px;
+  font-family: monospace;
+  padding: 5px;
+  float: right;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: green;
+  font-size: 18px;
+}
+.input::placeholder{
+    color: darkgray;
 }
 
-.container input{
-    width: 200px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: aquamarine;
+/*temperature container section*/
+.temp-container {
+  width: 50%;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.container label{
-    font-size: x-large;
+/*Label & h1 section*/
+label{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: monospace;
 }
 
+h1{
+    font-family: monospace;
+    font-weight: bold;
+}
