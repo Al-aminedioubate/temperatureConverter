@@ -1,9 +1,10 @@
-//Recuperation nos rentrer de donnees
+//Declaration et initialisation de nos variables
 let tCelsius = document.getElementById("celsiusT");
 let tFahrenheit = document.getElementById("fahrenheitT");
 let tKalvin = document.getElementById("kalvinT");
 
-//convertissons les valeurs  des temperature respective
+/*
+//convertissons les valeurs  de nos temperature respective
 //Celsius en F Et K
 tCelsius.onchange = function () {
 	const value = tCelsius.value;
@@ -57,32 +58,41 @@ tKalvin.onchange = function () {
 	const f = ((valueK - 273.15) * 9) / 5 + 32;
 	tFahrenheit.value = `${f.toFixed(2)}`;
 };
+*/
 
-/*
-//Let use swich statement to track which input we're working on
-let temperature;
-switch (temperature) {
-	case tCelsius:
-		tCelsius.onchange = function () {
-			const value = tCelsius.value;
-			if (value === "") {
-				tFahrenheit.textContent = "";
-				tKalvin.textContent = "";
-				return;
-			}
+//Let use swich statement to make the code more short and simple
+function convert(value, unit) {
+	switch (unit) {
+		case "K":
+			tCelsius.value = (value - 273.15).toFixed(2);
+			tFahrenheit.value = (((value - 273.15) * 9) / 5 + 32).toFixed(2);
+			break;
+		case "C":
+			tKalvin.value = (value + 273.15).toFixed(2);
+			tFahrenheit.value = ((value * 9) / 5 + 32).toFixed(2);
+			break;
+		case "F":
+			const c = ((value - 32) * 5) / 9;
+			tCelsius.value = c.toFixed(2);
+			tKalvin.value = (c + 273.15).toFixed(2);
+			break;
+		default:
+			alert("Veuillez entrer une valeur a convertir");
+	}
+}
 
-			//Calcul F
-			temperature = (value * 9) / 5 + 32;
-			tFahrenheit.value = `${temperature.toFixed(2)}`;
+//on utilise onchange en appellant la convert ci haut.
+tKalvin.onchange = () => {
+	if (tKalvin.value === "") return;
+	convert(Number(tKalvin.value), "K");
+};
 
-			//Calcul K
-			temperature = value + 273.15;
-			tKalvin.value = `${temperature}`;
-		};
+tCelsius.onchange = () => {
+	if (tCelsius.value === "") return;
+	convert(Number(tCelsius.value), "C");
+};
 
-		break;
-	case 1:
-		break;
-	case 2:
-		break;
-}*/
+tFahrenheit.onchange = () => {
+	if (tFahrenheit.value === "") return;
+	convert(Number(tFahrenheit.value), "F");
+};
